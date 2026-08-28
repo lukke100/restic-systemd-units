@@ -1,14 +1,13 @@
 # Maintainer: Lucas Hart <lukke100@gmail.com>
 pkgname=restic-systemd-units-git
-pkgver=r1.59bec35
+pkgver=r2.2b6092c
 pkgrel=1
 pkgdesc="Systemd units for restic backups"
 arch=('any')
 url="https://github.com/lukke100/restic-systemd-units"
 license=('BSD-3-Clause')
 depends=('restic' 'systemd')
-# source=("git+https://github.com/lukke100/restic-systemd-units.git")
-source=("git+file://$PWD")
+source=("git+https://github.com/lukke100/restic-systemd-units.git")
 sha256sums=('SKIP')
 
 pkgver() {
