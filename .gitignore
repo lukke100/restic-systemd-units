@@ -1,0 +1,4 @@
+pkg/
+src/
+restic-systemd-units/
+*.pkg.tar.zst

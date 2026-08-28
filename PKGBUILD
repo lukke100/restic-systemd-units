@@ -1,6 +1,6 @@
 # Maintainer: Lucas Hart <lukke100@gmail.com>
 pkgname=restic-systemd-units-git
-pkgver=r2.2b6092c
+pkgver=r3.4549fb4
 pkgrel=1
 pkgdesc="Systemd units for restic backups"
 arch=('any')
