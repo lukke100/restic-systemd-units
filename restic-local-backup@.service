@@ -1,0 +1,15 @@
+[Unit]
+Description=Run restic backup to %I
+RequiresMountsFor=/%I
+
+[Service]
+Type=oneshot
+EnvironmentFile=-%E/restic/%i.env
+CacheDirectory=restic
+Environment="RESTIC_CACHE_DIR=%C/restic"
+Nice=19
+IOSchedulingClass=idle
+OOMScoreAdjust=500
+SyslogIdentifier=restic-%i
+ExecStart=/usr/bin/xargs -d '\n' -a "%E/restic/%i.arg" -- \
+	/usr/bin/restic backup --repo "/%I"
