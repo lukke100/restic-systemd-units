@@ -1,6 +1,6 @@
 # Maintainer: Lucas Hart <lukke100@gmail.com>
 pkgname=restic-systemd-units-git
-pkgver=r3.4549fb4
+pkgver=r5.84bc0c9
 pkgrel=1
 pkgdesc="Systemd units for restic backups"
 arch=('any')
@@ -17,7 +17,7 @@ pkgver() {
 
 package() {
 	cd restic-systemd-units
-	install -Dm644 restic-local-backup@.service "$pkgdir/usr/lib/systemd/system/restic-local-backup@.service"
-	install -Dm644 restic-local-backup@.timer   "$pkgdir/usr/lib/systemd/system/restic-local-backup@.timer"
-	install -Dm644 LICENSE                      "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+	install -Dm644 restic-backup@.service "$pkgdir/usr/lib/systemd/system/restic-backup@.service"
+	install -Dm644 restic-backup@.timer   "$pkgdir/usr/lib/systemd/system/restic-backup@.timer"
+	install -Dm644 LICENSE                "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
