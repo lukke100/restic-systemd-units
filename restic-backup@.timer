@@ -1,5 +1,5 @@
 [Unit]
-Description=Timer for restic backup to %I
+Description=Timer for restic backup of %i
 
 [Timer]
 OnCalendar=hourly

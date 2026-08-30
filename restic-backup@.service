@@ -1,6 +1,6 @@
 [Unit]
-Description=Run restic backup to %I
-RequiresMountsFor=/%I
+Description=Run restic backup of %i
+After=network-online.target local-fs.target
 
 [Service]
 Type=oneshot
@@ -11,5 +11,5 @@ Nice=19
 IOSchedulingClass=idle
 OOMScoreAdjust=500
 SyslogIdentifier=restic-%i
-ExecStart=/usr/bin/xargs -d '\n' -a "%E/restic/%i.arg" -- \
-	/usr/bin/restic backup --repo "/%I"
+ExecStart=/usr/bin/xargs -t -d '\n' -a "%E/restic/%i.arg" -- \
+	/usr/bin/restic backup
